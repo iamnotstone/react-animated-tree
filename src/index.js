@@ -77,7 +77,16 @@ export default class Tree extends React.PureComponent {
 
   render() {
     const { open, visible, immediate } = this.state
-    const { children, content, type, style, canHide, springConfig } = this.props
+    const {
+      children,
+      content,
+      type,
+      style,
+      canHide,
+      springConfig,
+      contentStyle,
+    } = this.props
+    Object.assign(styles.contents, contentStyle)
     const Icon =
       Icons[`${children ? (open ? 'Minus' : 'Plus') : 'Close'}SquareO`]
     return (
@@ -112,7 +121,7 @@ export default class Tree extends React.PureComponent {
             opacity: open ? 1 : 0,
             transform: open ? 'translate3d(0px,0,0)' : 'translate3d(20px,0,0)',
           }}
-          {...springConfig && springConfig(open)}
+          {...(springConfig && springConfig(open))}
           render={Contents}>
           {children}
         </Spring>
