@@ -2,14 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Spring, config, animated } from 'react-spring'
 import * as Icons from './icons'
-
-const styles = {
+/*
   tree: {
     position: 'relative',
     padding: '4px 0px 0px 0px',
     //textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     //overflow: 'hidden',
+    verticalAlign: 'middle',
+  },*/
+const styles = {
+  tree: {
+    position: 'relative',
+    padding: '4px 0px 0px 0px',
+    whiteSpace: 'nowrap',
     verticalAlign: 'middle',
   },
   toggle: {

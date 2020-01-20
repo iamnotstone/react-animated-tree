@@ -121,9 +121,15 @@ export default class Tree extends React.PureComponent {
             restSpeedThreshold: 1,
             restDisplacementThreshold: 0.01,
           }}
-          from={{ height: 0, opacity: 0, transform: 'translate3d(20px,0,0)' }}
+          from={{
+            height: 0,
+            opacity: 0,
+            transform: 'translate3d(20px,0,0)',
+            width: 10,
+          }}
           to={{
             height: open ? 'auto' : 0,
+            width: open ? 'auto' : 10,
             opacity: open ? 1 : 0,
             transform: open ? 'translate3d(0px,0,0)' : 'translate3d(20px,0,0)',
           }}
