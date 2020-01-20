@@ -7,9 +7,9 @@ const styles = {
   tree: {
     position: 'relative',
     padding: '4px 0px 0px 0px',
-    textOverflow: 'ellipsis',
+    //textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    overflow: 'hidden',
+    //overflow: 'hidden',
     verticalAlign: 'middle',
   },
   toggle: {
