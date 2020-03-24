@@ -29,13 +29,13 @@ function createConfig(entry, out, name) {
     {
       input: `./src/${entry}.js`,
       output: { file: `dist/${out}.es.js`, format: 'es' },
-      //external: isExternal,
+      external: isExternal,
       plugins: [babel(getBabelOptions({ useESModules: true })), sizeSnapshot()],
     },
     {
       input: `./src/${entry}.js`,
       output: { file: `dist/${out}.cjs.js`, format: 'cjs' },
-      //external: isExternal,
+      external: isExternal,
       plugins: [babel(getBabelOptions({ useESModules: false }))],
     },
     {
