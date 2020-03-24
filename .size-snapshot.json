@@ -14,8 +14,8 @@
     }
   },
   "dist/react-animated-tree.umd.js": {
-    "bundled": 9521,
-    "minified": 5568,
-    "gzipped": 2189
+    "bundled": 8944,
+    "minified": 5479,
+    "gzipped": 2066
   }
 }
