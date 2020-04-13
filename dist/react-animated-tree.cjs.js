@@ -275,8 +275,10 @@ var Tree = /*#__PURE__*/ (function(_React$PureComponent) {
               transform: 'translate3d(20px,0,0) scale(1, 0)',
               width: 10,
               overflow: 'hidden',
+              display: 'none',
             },
             to: {
+              display: 'block',
               width: open ? 'auto' : 10,
               overflow: open ? 'visible' : 'hidden',
               opacity: open ? 1 : 0,

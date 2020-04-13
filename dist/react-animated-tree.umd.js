@@ -122,14 +122,14 @@
       whiteSpace: 'nowrap',
       verticalAlign: 'middle',
     },
-    x = {
+    b = {
       width: '1em',
       height: '1em',
       marginRight: 10,
       cursor: 'pointer',
       verticalAlign: 'middle',
     },
-    b = {
+    x = {
       textTransform: 'uppercase',
       fontFamily: 'monospace',
       fontSize: '0.6em',
@@ -202,18 +202,18 @@
             { style: f({}, y, {}, s), className: 'treeview' },
             d.createElement(u, {
               className: 'toggle',
-              style: f({}, x, { opacity: o ? 1 : 0.3 }),
+              style: f({}, b, { opacity: o ? 1 : 0.3 }),
               onClick: this.toggle,
             }),
             d.createElement(
               'span',
-              { style: f({}, b, { marginRight: a ? 10 : 0 }) },
+              { style: f({}, x, { marginRight: a ? 10 : 0 }) },
               a
             ),
             p &&
               d.createElement(h, {
                 className: 'toggle',
-                style: f({}, x, { opacity: n ? 1 : 0.4 }),
+                style: f({}, b, { opacity: n ? 1 : 0.4 }),
                 onClick: this.toggleVisibility,
               }),
             d.createElement('span', { style: { verticalAlign: 'middle' } }, l),
@@ -232,8 +232,10 @@
                     transform: 'translate3d(20px,0,0) scale(1, 0)',
                     width: 10,
                     overflow: 'hidden',
+                    display: 'none',
                   },
                   to: {
+                    display: 'block',
                     width: t ? 'auto' : 10,
                     overflow: t ? 'visible' : 'hidden',
                     opacity: t ? 1 : 0,
