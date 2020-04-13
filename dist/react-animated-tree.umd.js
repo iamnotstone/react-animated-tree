@@ -235,7 +235,7 @@
                     display: 'none',
                   },
                   to: {
-                    display: 'block',
+                    display: t ? 'block' : 'none',
                     width: t ? 'auto' : 10,
                     overflow: t ? 'visible' : 'hidden',
                     opacity: t ? 1 : 0,

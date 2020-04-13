@@ -134,7 +134,7 @@ export default class Tree extends React.PureComponent {
             display: 'none',
           }}
           to={{
-            display: 'block',
+            display: open ? 'block' : 'none',
             width: open ? 'auto' : 10,
             overflow: open ? 'visible' : 'hidden',
             opacity: open ? 1 : 0,
