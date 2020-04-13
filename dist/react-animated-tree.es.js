@@ -80,13 +80,21 @@ var Icons = /*#__PURE__*/ Object.freeze({
   EyeO: EyeO,
 })
 
+/*
+  tree: {
+    position: 'relative',
+    padding: '4px 0px 0px 0px',
+    //textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    //overflow: 'hidden',
+    verticalAlign: 'middle',
+  },*/
+
 var styles = {
   tree: {
     position: 'relative',
     padding: '4px 0px 0px 0px',
-    textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    overflow: 'hidden',
     verticalAlign: 'middle',
   },
   toggle: {
@@ -134,6 +142,7 @@ var Tree =
       _this = _React$PureComponent.call(this) || this
 
       _this.toggle = function() {
+        if (_this.props.onToggle) _this.props.onToggle()
         return (
           _this.props.children &&
           _this.setState(function(state) {
@@ -260,9 +269,13 @@ var Tree =
                 height: 0,
                 opacity: 0,
                 transform: 'translate3d(20px,0,0)',
+                width: 10,
+                overflow: 'hidden',
               },
               to: {
                 height: open ? 'auto' : 0,
+                width: open ? 'auto' : 10,
+                overflow: open ? 'visible' : 'hidden',
                 opacity: open ? 1 : 0,
                 transform: open
                   ? 'translate3d(0px,0,0)'
@@ -293,6 +306,7 @@ Tree.propTypes = {
   canHide: PropTypes.bool,
   content: PropTypes.node,
   springConfig: PropTypes.func,
+  onToggle: PropTypes.func,
 }
 
 export default Tree

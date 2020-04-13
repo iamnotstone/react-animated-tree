@@ -99,9 +99,7 @@
     b = {
       position: 'relative',
       padding: '4px 0px 0px 0px',
-      textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
-      overflow: 'hidden',
       verticalAlign: 'middle',
     },
     y = {
@@ -129,10 +127,11 @@
         return (
           ((t = n.call(this) || this).toggle = function() {
             return (
+              t.props.onToggle && t.props.onToggle(),
               t.props.children &&
-              t.setState(function(e) {
-                return { open: !e.open, immediate: !1 }
-              })
+                t.setState(function(e) {
+                  return { open: !e.open, immediate: !1 }
+                })
             )
           }),
           (t.toggleVisibility = function() {
@@ -170,8 +169,8 @@
             r = e.immediate,
             i = this.props,
             l = i.children,
-            a = i.content,
-            o = i.type,
+            o = i.content,
+            a = i.type,
             s = i.style,
             p = i.canHide,
             c = i.springConfig,
@@ -188,8 +187,8 @@
             }),
             h.createElement(
               'span',
-              { style: d({}, x, { marginRight: o ? 10 : 0 }) },
-              o
+              { style: d({}, x, { marginRight: a ? 10 : 0 }) },
+              a
             ),
             p &&
               h.createElement(m, {
@@ -197,7 +196,7 @@
                 style: d({}, y, { opacity: n ? 1 : 0.4 }),
                 onClick: this.toggleVisibility,
               }),
-            h.createElement('span', { style: { verticalAlign: 'middle' } }, a),
+            h.createElement('span', { style: { verticalAlign: 'middle' } }, o),
             h.createElement(
               q.Spring,
               d(
@@ -212,9 +211,13 @@
                     height: 0,
                     opacity: 0,
                     transform: 'translate3d(20px,0,0)',
+                    width: 10,
+                    overflow: 'hidden',
                   },
                   to: {
                     height: t ? 'auto' : 0,
+                    width: t ? 'auto' : 10,
+                    overflow: t ? 'visible' : 'hidden',
                     opacity: t ? 1 : 0,
                     transform: t
                       ? 'translate3d(0px,0,0)'
@@ -239,6 +242,7 @@
       canHide: e.bool,
       content: e.node,
       springConfig: e.func,
+      onToggle: e.func,
     }),
     t
   )
