@@ -142,7 +142,7 @@ var Tree =
       _this = _React$PureComponent.call(this) || this
 
       _this.toggle = function() {
-        if (_this.props.onToggle) _this.props.onToggle(!state.open)
+        if (_this.props.onToggle) _this.props.onToggle(!_this.state.open)
         return (
           _this.props.children &&
           _this.setState(function(state) {
