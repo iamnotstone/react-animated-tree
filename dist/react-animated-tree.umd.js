@@ -12,7 +12,7 @@
         e.PropTypes,
         e.ReactSpring
       ))
-})(this, function(d, e, q) {
+})(this, function(d, e, h) {
   'use strict'
   ;(d = d && d.hasOwnProperty('default') ? d.default : d),
     (e = e && e.hasOwnProperty('default') ? e.default : e)
@@ -21,7 +21,7 @@
       ((e.prototype.constructor = e).__proto__ = t)
   }
   var t,
-    f =
+    q =
       ((function(e) {
         function t() {
           return (
@@ -41,10 +41,10 @@
         e.exports = t
       })((t = { exports: {} }), t.exports),
       t.exports)
-  function h(e) {
+  function f(e) {
     return d.createElement(
       'svg',
-      f({}, e, { viewBox: '61 51 902 666' }),
+      q({}, e, { viewBox: '61 51 902 666' }),
       d.createElement(
         'g',
         null,
@@ -55,10 +55,10 @@
       )
     )
   }
-  function m(e) {
+  function g(e) {
     var t = e.children,
       n = i(e, ['children'])
-    return d.createElement(q.animated.div, { style: f({}, n, {}, E) }, t)
+    return d.createElement(h.animated.div, { style: q({}, n, {}, E) }, t)
   }
   var i = function(e, t) {
       if (null == e) return {}
@@ -70,12 +70,12 @@
         (n = o[r]), 0 <= t.indexOf(n) || (i[n] = e[n])
       return i
     },
-    g = Object.freeze({
+    m = Object.freeze({
       __proto__: null,
       PlusSquareO: function(e) {
         return d.createElement(
           'svg',
-          f({}, e, { viewBox: '64 -65 897 897' }),
+          q({}, e, { viewBox: '64 -65 897 897' }),
           d.createElement(
             'g',
             null,
@@ -89,7 +89,7 @@
       MinusSquareO: function(e) {
         return d.createElement(
           'svg',
-          f({}, e, { viewBox: '64 -65 897 897' }),
+          q({}, e, { viewBox: '64 -65 897 897' }),
           d.createElement(
             'g',
             null,
@@ -103,7 +103,7 @@
       CloseSquareO: function(e) {
         return d.createElement(
           'svg',
-          f({}, e, { viewBox: '64 -65 897 897' }),
+          q({}, e, { viewBox: '64 -65 897 897' }),
           d.createElement(
             'g',
             null,
@@ -114,7 +114,7 @@
           )
         )
       },
-      EyeO: h,
+      EyeO: f,
     }),
     y = {
       position: 'relative',
@@ -177,7 +177,7 @@
             return ['open', 'visible'].reduce(function(e, t) {
               var n
               return i.props[t] !== r[t]
-                ? f({}, e, (((n = {})[t] = r[t]), n))
+                ? q({}, e, (((n = {})[t] = r[t]), n))
                 : e
             }, {})
           })
@@ -196,44 +196,46 @@
             c = i.springConfig,
             v = i.contentStyle
           Object.assign(E, v)
-          var u = g[(o ? (t ? 'Minus' : 'Plus') : 'Close') + 'SquareO']
+          var u = m[(o ? (t ? 'Minus' : 'Plus') : 'Close') + 'SquareO']
           return d.createElement(
             'div',
-            { style: f({}, y, {}, s), className: 'treeview' },
+            { style: q({}, y, {}, s), className: 'treeview' },
             d.createElement(u, {
               className: 'toggle',
-              style: f({}, x, { opacity: o ? 1 : 0.3 }),
+              style: q({}, x, { opacity: o ? 1 : 0.3 }),
               onClick: this.toggle,
             }),
             d.createElement(
               'span',
-              { style: f({}, b, { marginRight: a ? 10 : 0 }) },
+              { style: q({}, b, { marginRight: a ? 10 : 0 }) },
               a
             ),
             p &&
-              d.createElement(h, {
+              d.createElement(f, {
                 className: 'toggle',
-                style: f({}, x, { opacity: n ? 1 : 0.4 }),
+                style: q({}, x, { opacity: n ? 1 : 0.4 }),
                 onClick: this.toggleVisibility,
               }),
             d.createElement('span', { style: { verticalAlign: 'middle' } }, l),
             d.createElement(
-              q.Spring,
-              f(
+              h.Spring,
+              q(
                 {
                   native: !0,
                   immediate: r,
-                  config: f({}, q.config.default, {
+                  config: q({}, h.config.default, {
                     restSpeedThreshold: 1,
                     restDisplacementThreshold: 0.01,
                   }),
                   from: {
+                    height: 0,
                     opacity: 0,
                     transform: 'translate3d(20px,0,0)',
                     width: 10,
                     overflow: 'hidden',
                   },
                   to: {
+                    height: t ? 'auto' : 0,
                     width: t ? 'auto' : 10,
                     overflow: t ? 'visible' : 'hidden',
                     opacity: t ? 1 : 0,
@@ -243,7 +245,7 @@
                   },
                 },
                 c && c(t),
-                { render: m }
+                { render: g }
               ),
               o
             )
