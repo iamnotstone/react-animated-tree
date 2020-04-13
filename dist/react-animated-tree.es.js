@@ -261,20 +261,18 @@ var Tree = /*#__PURE__*/ (function(_React$PureComponent) {
               restDisplacementThreshold: 0.01,
             }),
             from: {
-              height: 0,
               opacity: 0,
-              transform: 'translate3d(20px,0,0)',
+              transform: 'translate3d(20px,0,0) scale(1, 0)',
               width: 10,
               overflow: 'hidden',
             },
             to: {
-              height: open ? 'auto' : 0,
               width: open ? 'auto' : 10,
               overflow: open ? 'visible' : 'hidden',
               opacity: open ? 1 : 0,
               transform: open
-                ? 'translate3d(0px,0,0)'
-                : 'translate3d(20px,0,0)',
+                ? 'translate3d(0px,0,0) scale(1,1)'
+                : 'translate3d(20px,0,0) scale(1,0)',
             },
           },
           springConfig && springConfig(open),
