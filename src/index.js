@@ -62,7 +62,7 @@ export default class Tree extends React.PureComponent {
   }
 
   toggle = () => {
-    if (this.props.onToggle) this.props.onToggle()
+    if (this.props.onToggle) this.props.onToggle(!state.open)
     return (
       this.props.children &&
       this.setState(state => ({ open: !state.open, immediate: false }))

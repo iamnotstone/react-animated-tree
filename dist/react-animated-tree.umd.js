@@ -127,7 +127,7 @@
         return (
           ((t = n.call(this) || this).toggle = function() {
             return (
-              t.props.onToggle && t.props.onToggle(),
+              t.props.onToggle && t.props.onToggle(!state.open),
               t.props.children &&
                 t.setState(function(e) {
                   return { open: !e.open, immediate: !1 }
