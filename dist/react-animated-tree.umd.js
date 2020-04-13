@@ -208,14 +208,12 @@
                     restDisplacementThreshold: 0.01,
                   }),
                   from: {
-                    height: 0,
                     opacity: 0,
                     transform: 'translate3d(20px,0,0)',
                     width: 10,
                     overflow: 'hidden',
                   },
                   to: {
-                    height: t ? 'auto' : 0,
                     width: t ? 'auto' : 10,
                     overflow: t ? 'visible' : 'hidden',
                     opacity: t ? 1 : 0,
