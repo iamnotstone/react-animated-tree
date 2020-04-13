@@ -140,7 +140,7 @@ export default class Tree extends React.PureComponent {
             opacity: open ? 1 : 0,
             transform: open
               ? 'translate3d(0px,0,0) scale(1,1)'
-              : 'translate3d(20px,-50%, 0) scale(1,0)',
+              : 'translate3d(0px,-50%, 0) scale(1,0)',
           }}
           {...(springConfig && springConfig(open))}
           render={Contents}>
